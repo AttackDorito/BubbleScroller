@@ -133,10 +133,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc6e11c30a3855f4a87fe0cc0baf9d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BubbleBullet: {fileID: 5354305780472248198, guid: 6a1687fb5ee899c4681ce482fa3993d5, type: 3}
+  BubbleBullet: {fileID: 1368037585861393795, guid: 6a1687fb5ee899c4681ce482fa3993d5, type: 3}
   BubbleSpeed: 4
   charging: 0
   chargeTime: 0
+  sceneCamera: {fileID: 0}
 --- !u!1 &7250830583581925654
 GameObject:
   m_ObjectHideFlags: 0
