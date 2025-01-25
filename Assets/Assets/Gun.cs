@@ -30,8 +30,11 @@ public class Gun : MonoBehaviour
 
         // speed limit of 20 units/sec 
         
-        if (chargeTime > 20f) {
-            chargeTime = 20f;
+        if (chargeTime > 10f) {
+            chargeTime = 10f;
+        }
+        else if (chargeTime < 0.25f) {
+            chargeTime = 0.25f;
         }
 
         GameObject newGameObject = Instantiate(BubbleBullet, this.transform.position, this.transform.rotation);

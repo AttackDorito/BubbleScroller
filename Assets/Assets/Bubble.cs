@@ -26,7 +26,7 @@ public class Bubble : MonoBehaviour
         
         float size = charge;
         float speed = (1/charge) * 10;
-
+        rb.gravityScale = -(1/size);
         rb.linearVelocity = Vector3.Normalize(dir) * speed;
         this.transform.localScale = new Vector3(charge, charge, charge);
         age = 0;
