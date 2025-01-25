@@ -36,7 +36,7 @@ public class Gun : MonoBehaviour
 
 
         GameObject newGameObject = Instantiate(BubbleBullet, this.transform.position, this.transform.rotation);
-        newGameObject.GetComponent<Bubble>().speed = chargeTime;
+        newGameObject.GetComponent<Bubble>().charge = chargeTime;
         chargeTime = 0f;
     }
 
