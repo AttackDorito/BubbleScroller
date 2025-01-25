@@ -110,8 +110,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 985ea1c39b6d4d8488b73ef25926827b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  charge: 0
   lifespan: 8
+  maxCharge: 9
+  dir: {x: 0, y: 0}
 --- !u!1 &8443826298047259904
 GameObject:
   m_ObjectHideFlags: 0
