@@ -5,8 +5,9 @@ public class PlayerControler : MonoBehaviour
 {
     private Rigidbody2D rb;
 
-    public float moveForce = 15f;
-    public float maxSpeed = 15f;
+    public float moveForce = 50f;
+    public float maxSpeed = 12f;
+    public float dragFactor = 2f;
     
     InputAction moveAction;
     
@@ -22,6 +23,7 @@ public class PlayerControler : MonoBehaviour
     {   
         Vector2 inputVector = moveAction.ReadValue<Vector2>();
         rb.AddForce(inputVector * moveForce);
+        rb.AddForce(-rb.linearVelocity*dragFactor);
         rb.linearVelocity = Vector2.ClampMagnitude(rb.linearVelocity, maxSpeed);
     }
 }
