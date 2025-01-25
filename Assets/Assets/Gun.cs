@@ -1,7 +1,5 @@
 using System;
-using JetBrains.Annotations;
 using UnityEngine;
-
 
 public class Gun : MonoBehaviour
 {
@@ -16,6 +14,7 @@ public class Gun : MonoBehaviour
     void Start()
     {
         // BubbleBullet = Instantiate(BubbleBulletObject, transform.position, transform.rotation).GetComponent<Rigidbody2D>();
+
     }
 
     void ShootCharge() {
@@ -25,7 +24,6 @@ public class Gun : MonoBehaviour
     void ShootRelease() {
         
         chargeTime *= 2;
-
         charging = false;
 
         // speed limit of 20 units/sec 
@@ -36,7 +34,7 @@ public class Gun : MonoBehaviour
         else if (chargeTime < 0.25f) {
             chargeTime = 0.25f;
         }
-
+        
         GameObject newGameObject = Instantiate(BubbleBullet, this.transform.position, this.transform.rotation);
         newGameObject.GetComponent<Bubble>().charge = chargeTime;
         chargeTime = 0f;
@@ -44,11 +42,10 @@ public class Gun : MonoBehaviour
         // direction of bubble
         
         newGameObject.GetComponent<Bubble>().dir = (sceneCamera.ScreenToWorldPoint(Input.mousePosition) - transform.position);
-
         
     }
 
-    // Update is called once per frame
+    // Update is called once per frame;
     void Update()
     {   
         // update charge time 
@@ -59,10 +56,21 @@ public class Gun : MonoBehaviour
         if (Input.GetMouseButtonDown(0)) {
             ShootCharge();
         }
+
         if (Input.GetMouseButtonUp(0)) {
             ShootRelease();
         }
         
-        Debug.DrawLine(sceneCamera.ScreenToWorldPoint(Input.mousePosition), transform.position, Color.magenta);
+        updateRotation();
+        // Debug.DrawLine(sceneCamera.ScreenToWorldPoint(Input.mousePosition), transform.position, Color.magenta);
+
+    }
+
+    void updateRotation() {
+        Vector2 mouseVector = sceneCamera.ScreenToWorldPoint(Input.mousePosition);
+        Debug.Log(mouseVector);
+        float mouseAngle = -(Mathf.Atan2(mouseVector.x, mouseVector.y) * Mathf.Rad2Deg) + 90;
+        // Debug.Log(mouseAngle);
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, mouseAngle));
     }
 }
