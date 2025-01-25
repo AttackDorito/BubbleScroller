@@ -12,7 +12,7 @@ public class Gun : MonoBehaviour
     [SerializeField] Camera sceneCamera;
 
     void Start()
-    {
+    {   
         // BubbleBullet = Instantiate(BubbleBulletObject, transform.position, transform.rotation).GetComponent<Rigidbody2D>();
 
     }
@@ -62,15 +62,15 @@ public class Gun : MonoBehaviour
         }
         
         updateRotation();
-        // Debug.DrawLine(sceneCamera.ScreenToWorldPoint(Input.mousePosition), transform.position, Color.magenta);
+        Debug.DrawLine((transform.position + transform.right*10), transform.position, Color.magenta);
 
     }
 
     void updateRotation() {
-        Vector2 mouseVector = sceneCamera.ScreenToWorldPoint(Input.mousePosition);
-        Debug.Log(mouseVector);
+        Vector2 mouseVector = sceneCamera.ScreenToWorldPoint(Input.mousePosition) - transform.parent.position;
+        //Debug.Log(mouseVector);
         float mouseAngle = -(Mathf.Atan2(mouseVector.x, mouseVector.y) * Mathf.Rad2Deg) + 90;
         // Debug.Log(mouseAngle);
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, mouseAngle));
+        transform.parent.rotation = Quaternion.Euler(new Vector3(0, 0, mouseAngle));
     }
 }
