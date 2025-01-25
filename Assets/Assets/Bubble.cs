@@ -30,7 +30,7 @@ public class Bubble : MonoBehaviour
         rb.linearVelocity = Vector3.Normalize(dir) * speed;
         this.transform.localScale = new Vector3(charge, charge, charge);
         age = 0;
-
+        
 
     }
 
@@ -39,7 +39,6 @@ public class Bubble : MonoBehaviour
     {
         // increment object age
         age += Time.deltaTime;
-        Debug.Log(age);
         if (age > lifespan) {
             Destroy(gameObject);
         }
