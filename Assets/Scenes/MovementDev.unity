@@ -289,29 +289,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2851077894374494885, guid: b875bcc524414ca40ae68e3411cb8231, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.36671686
-      objectReference: {fileID: 0}
-    - target: {fileID: 2851077894374494885, guid: b875bcc524414ca40ae68e3411cb8231, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.7983317
-      objectReference: {fileID: 0}
     - target: {fileID: 5190906229445195113, guid: b875bcc524414ca40ae68e3411cb8231, type: 3}
       propertyPath: m_Name
       value: PlayerAndCamera
-      objectReference: {fileID: 0}
-    - target: {fileID: 5554164066074286360, guid: b875bcc524414ca40ae68e3411cb8231, type: 3}
-      propertyPath: m_SortingLayer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5554164066074286360, guid: b875bcc524414ca40ae68e3411cb8231, type: 3}
-      propertyPath: m_SortingOrder
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5554164066074286360, guid: b875bcc524414ca40ae68e3411cb8231, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6141234393884010212, guid: b875bcc524414ca40ae68e3411cb8231, type: 3}
       propertyPath: m_LocalPosition.x
@@ -352,18 +332,6 @@ PrefabInstance:
     - target: {fileID: 6141234393884010212, guid: b875bcc524414ca40ae68e3411cb8231, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7925255329298335197, guid: b875bcc524414ca40ae68e3411cb8231, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8319473727076780210, guid: b875bcc524414ca40ae68e3411cb8231, type: 3}
-      propertyPath: Lookahead.Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8319473727076780210, guid: b875bcc524414ca40ae68e3411cb8231, type: 3}
-      propertyPath: Lookahead.IgnoreY
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
