@@ -11,7 +11,7 @@ public class Gun : MonoBehaviour
 
     public Boolean charging;
     public float chargeTime = 0f;
-
+    [SerializeField] Camera sceneCamera;
 
     void Start()
     {
@@ -34,15 +34,20 @@ public class Gun : MonoBehaviour
             chargeTime = 20f;
         }
 
-
         GameObject newGameObject = Instantiate(BubbleBullet, this.transform.position, this.transform.rotation);
         newGameObject.GetComponent<Bubble>().charge = chargeTime;
         chargeTime = 0f;
+
+        // direction of bubble
+        
+        newGameObject.GetComponent<Bubble>().dir = (sceneCamera.ScreenToWorldPoint(Input.mousePosition) - transform.position);
+
+        
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {   
         // update charge time 
         if (charging) {
             chargeTime += Time.deltaTime;
@@ -54,5 +59,7 @@ public class Gun : MonoBehaviour
         if (Input.GetMouseButtonUp(0)) {
             ShootRelease();
         }
+        
+        Debug.DrawLine(sceneCamera.ScreenToWorldPoint(Input.mousePosition), transform.position, Color.magenta);
     }
 }

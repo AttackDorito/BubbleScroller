@@ -11,6 +11,7 @@ public class Bubble : MonoBehaviour
     public float lifespan = 8f;
     float age;
     public float maxCharge = 9f;
+    public Vector2 dir = new Vector2(0, 0);
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,9 +27,11 @@ public class Bubble : MonoBehaviour
         float size = charge;
         float speed = (1/charge) * 10;
 
-        rb.linearVelocity = new Vector3(speed, 0, 0);
+        rb.linearVelocity = Vector3.Normalize(dir) * speed;
         this.transform.localScale = new Vector3(charge, charge, charge);
         age = 0;
+
+
     }
 
     // Update is called once per frame

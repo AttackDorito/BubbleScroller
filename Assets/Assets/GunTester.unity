@@ -265,6 +265,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3309674315898833737, guid: 84f7ac61c2746ae40a4f4c7a7938ca79, type: 3}
+      propertyPath: sceneCamera
+      value: 
+      objectReference: {fileID: 1534832650}
+    - target: {fileID: 3309674315898833737, guid: 84f7ac61c2746ae40a4f4c7a7938ca79, type: 3}
       propertyPath: BubbleBullet
       value: 
       objectReference: {fileID: 1368037585861393795, guid: 6a1687fb5ee899c4681ce482fa3993d5, type: 3}
